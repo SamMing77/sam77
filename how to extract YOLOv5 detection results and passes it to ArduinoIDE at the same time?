@@ -1,3 +1,22 @@
+#I am doing a project that has to let my ESP32 to response according to the YOLOv5 detected results synchronously. For example, when i detected bumps, my esp32 will light on the LED; while detectd potholes, it will blinks for 3seconds.
+#I had tried lots of ways but i still cannot extract the detection results and send it synchronously to the environment of Arduino, therefore i would like to restart it from the original script. May anyone guide me on
+#1) Retrive the detection results (bumps, potholes) and 2)send the results synchronously to ArduinoIDE?
+
+#i had trained my own model and it's detecting the video well
+#What's printing out now for the detection results in the Pycharm terminal are like this:
+#video 1/1 (840/849) C:\Users\yimin\Desktop\FYP\RoadDetection\VID_20241126_131430.mp4: 640x384 1 bumps, 57.2ms
+#video 1/1 (841/849) C:\Users\yimin\Desktop\FYP\RoadDetection\VID_20241126_131430.mp4: 640x384 1 bumps, 55.5ms
+#video 1/1 (842/849) C:\Users\yimin\Desktop\FYP\RoadDetection\VID_20241126_131430.mp4: 640x384 1 bumps, 55.1ms
+#video 1/1 (843/849) C:\Users\yimin\Desktop\FYP\RoadDetection\VID_20241126_131430.mp4: 640x384 1 bumps, 55.7ms
+#video 1/1 (844/849) C:\Users\yimin\Desktop\FYP\RoadDetection\VID_20241126_131430.mp4: 640x384 1 bumps, 56.4ms
+#video 1/1 (845/849) C:\Users\yimin\Desktop\FYP\RoadDetection\VID_20241126_131430.mp4: 640x384 1 bumps, 63.0ms
+#video 1/1 (846/849) C:\Users\yimin\Desktop\FYP\RoadDetection\VID_20241126_131430.mp4: 640x384 1 bumps, 63.9ms
+#video 1/1 (847/849) C:\Users\yimin\Desktop\FYP\RoadDetection\VID_20241126_131430.mp4: 640x384 1 bumps, 56.1ms
+#video 1/1 (848/849) C:\Users\yimin\Desktop\FYP\RoadDetection\VID_20241126_131430.mp4: 640x384 1 bumps, 63.9ms
+#video 1/1 (849/849) C:\Users\yimin\Desktop\FYP\RoadDetection\VID_20241126_131430.mp4: 640x384 1 bumps, 60.7ms
+
+#Below are the original built-in "detect.py" from YOLOv5
+
 # Ultralytics YOLOv5 🚀, AGPL-3.0 license
 """
 Run YOLOv5 detection inference on images, videos, directories, globs, YouTube, webcam, streams, etc.
